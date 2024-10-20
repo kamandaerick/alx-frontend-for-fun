@@ -1,21 +1,12 @@
-#!/usr/bin/env python3
-"""Create a script"""
+#!/usr/bin/python3
+"""This scripts checks the number of args passed and if a file exists"""
 import sys
 import os
-
-def main():
-    if len(sys.argv) != 3:
-        print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
+if '__name__' == '__main__':
+    if len(sys.argv) < 3:
+        sys.stderr.write("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
-
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-
-    if not os.path.isfile(input_file):
-        print(f"Missing {input_file}", file=sys.stderr)
+    if not os.path.exists(sys.argv[1]):
+        sys.stderr.write("FMissing {}".format(sys.argv[1]))
         sys.exit(1)
-
     sys.exit(0)
-
-if __name__ == "__main__":
-    main()
