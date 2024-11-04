@@ -352,7 +352,11 @@
   }
   
   .section-hero .section-title {
-    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 50vh;
   }
   
   .section-hero .section-inner {
